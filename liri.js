@@ -14,7 +14,7 @@ var input = "";
 for (var i = 3; i < nodeArgs.length; i++) {
 
   // Build a string with the input.
-  input = input + "+" + nodeArgs[i];
+  input = input + " " + nodeArgs[i];
 
 }
 console.log(input);
@@ -30,12 +30,15 @@ var params = {screen_name: "@TestyMcTest919", count: 20};
 
 if (command === "my-tweets") {   
 
-
-  client.get("statuses/user_timeline", "utf8", function(error, tweets, response) {
-    if(error) throw error;
+  //client.get("http://api.twitter.com/1.1/statuses/user_timeline.json?count=20", params), function(error, tweets, response){
+  //console.log(response)   
+ 
+client.get("statuses/user_timeline", "utf8", function(error, tweets, response) {
+  if(error) throw error;
 
   ///////Right now I can only get it to return all of the information about my last 20 tweets, not just the text.  I have googled like crazy and tried (tweets.text), (tweets).text, (tweets).Text, (tweets/text), the JSON.parse format,  but I can't find the right combination.
     console.log(tweets);   
+  
 
     fs.appendFile("log.txt", "\n" + "Command: " + command+"\n" + "Screen Name: @TestyMcTest919"+"\n" + "Tweets: " + tweets+"\n" + "*******************************************************************" + "\n", function(err){
       if(err){
@@ -43,16 +46,10 @@ if (command === "my-tweets") {
       } else {
           console.log("Content appended!");
       }
-  });
+    });
   })
-  //   fs.appendFile(log.txt, command + tweets, function(err){
-  //     if(err){
-  //         console.log(err);
-  //     } else {
-  //         console.log("Content appended!");
-  //     }
-  // });
-  };
+
+   };
 
 
 ////////////////////SPOTIFY/////////////////////////
@@ -107,10 +104,12 @@ fs.readFile("random.txt", "utf8", function(error, data) {
       });
       });
     });
-      
+  };  
     
 ///////////////OMDB///////////////////
+var omdb = require("omdb");
 var request = require("request");
+
 if (command === "movie-this"){
   if(input < 1) {
     input = "Mr. Nobody";
@@ -122,7 +121,7 @@ request.get("http://www.omdbapi.com/?t=" + input + "&y=&plot=short&tomatoes=true
   console.log('error:', error); // Print the error if one occurred
   console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
 
-  console.log(body);
+  console.log(input);
   console.log("**********************************************");
   console.log("Title: " + JSON.parse(body).Title);
   console.log("**********************************************");
@@ -151,8 +150,8 @@ request.get("http://www.omdbapi.com/?t=" + input + "&y=&plot=short&tomatoes=true
     }
   });
   });
-};
 }
+
 
 
 
