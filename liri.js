@@ -24,32 +24,26 @@ console.log(input);
 
 var Twitter = require("twitter");
 var client = new Twitter(keys.twitter);
-
 var params = {screen_name: "@TestyMcTest919", count: 20};
 
-
 if (command === "my-tweets") {   
-
-  //client.get("http://api.twitter.com/1.1/statuses/user_timeline.json?count=20", params), function(error, tweets, response){
-  //console.log(response)   
  
-client.get("statuses/user_timeline", "utf8", function(error, tweets, response) {
+client.get("statuses/user_timeline", "utf8", function(error, tweet, response) {
   if(error) throw error;
-
-  ///////Right now I can only get it to return all of the information about my last 20 tweets, not just the text.  I have googled like crazy and tried (tweets.text), (tweets).text, (tweets).Text, (tweets/text), the JSON.parse format,  but I can't find the right combination.
-    console.log(tweets);   
+ 
+  for (i=0; i < tweet.length; i++) {
+    console.log(tweet[i].text);   
   
-
-    fs.appendFile("log.txt", "\n" + "Command: " + command+"\n" + "Screen Name: @TestyMcTest919"+"\n" + "Tweets: " + tweets+"\n" + "*******************************************************************" + "\n", function(err){
+    fs.appendFile("log.txt", "\n" + "Command: " + command+"\n" + "Screen Name: @TestyMcTest919"+"\n" + "Tweets: " + tweet[i].text+"\n" + "*******************************************************************" + "\n", function(err){
       if(err){
           console.log(err);
-      } else {
-          console.log("Content appended!");
-      }
-    });
-  })
-
-   };
+      } 
+ 
+    }
+    )
+    }}
+    )}
+   
 
 
 ////////////////////SPOTIFY/////////////////////////
@@ -61,10 +55,18 @@ var rp = require("request-promise");
  
 if (command === "spotify-this-song"){
 
-spotifyApi.search({query: input, type: "track", limit: 1 }) 
-.then(function(data) {
-    console.log("*************************");
-    console.log(data.body);
+spotifyApi.search({type: "track", query: input, limit: 1 },function(err, data){
+
+  if (err) {
+    return console.log('Error occurred: ' + err);
+  }
+
+console.log(data); 
+
+ 
+// .then(function(data) {
+//     console.log("*************************");
+//     console.log(data.body);
 
     fs.appendFile("log.txt", "\n" + "Command: " + command+"\n" + "Song: " + input + "Spotify Song Information: " + data.body + "\n" + "*******************************************************************" + "\n", function(err){
       if(err){
@@ -72,9 +74,12 @@ spotifyApi.search({query: input, type: "track", limit: 1 })
       } else {
           console.log("Content appended!");
       }
+    });
   });
-})
 };
+//   });
+// })
+// };
 
 
 //////DO WHAT IT SAYS COMMAND///////////
