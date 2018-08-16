@@ -25,7 +25,12 @@
     "request": "^2.85.0",
     "request-promise": "^4.2.2",
     "spotify-web-api-node": "^3.0.0",
+    "twitter": "^1.7.1",
+  },
+
+  "devDependencies": {
     "superagent": "^3.8.3",
-    "twitter": "^1.7.1"
+    "hoek": "4.2.1"
+
   }
 }
