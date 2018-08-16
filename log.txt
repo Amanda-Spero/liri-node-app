@@ -1,101 +1,23 @@
 
 
-Command: my-tweets
-Screen Name: @TestyMcTest919
-Tweets: tweet21
+Command: movie-this
+Input: Mr. Nobody
+Title: Mr. Nobody
+Year Released: 2009
+IMDB Rating: 7.9
+Rotten Tomato Rating: N/A
+Country of Release: Belgium, Germany, Canada, France, USA, UK
+Language: English, Mohawk
+Plot: A boy stands on a station platform as a train is about to leave. Should he go with his mother or stay with his father? Infinite possibilities arise from this decision. As long as he doesn't choose, anything is possible.
+Actors: Jared Leto, Sarah Polley, Diane Kruger, Linh Dan Pham
 *******************************************************************
 
-Command: my-tweets
-Screen Name: @TestyMcTest919
-Tweets: tweet20
+Command: spotify-this-song
+Song:  I Want it That WaySpotify Song Information: undefined
 *******************************************************************
 
-Command: my-tweets
-Screen Name: @TestyMcTest919
-Tweets: tweet19
-*******************************************************************
+Command: do-what-it-says
+Song: "I Want it That Way"
 
-Command: my-tweets
-Screen Name: @TestyMcTest919
-Tweets: tweet18
-*******************************************************************
-
-Command: my-tweets
-Screen Name: @TestyMcTest919
-Tweets: tweet17
-*******************************************************************
-
-Command: my-tweets
-Screen Name: @TestyMcTest919
-Tweets: tweet16
-*******************************************************************
-
-Command: my-tweets
-Screen Name: @TestyMcTest919
-Tweets: tweet15
-*******************************************************************
-
-Command: my-tweets
-Screen Name: @TestyMcTest919
-Tweets: tweet14
-*******************************************************************
-
-Command: my-tweets
-Screen Name: @TestyMcTest919
-Tweets: tweet13
-*******************************************************************
-
-Command: my-tweets
-Screen Name: @TestyMcTest919
-Tweets: tweet12
-*******************************************************************
-
-Command: my-tweets
-Screen Name: @TestyMcTest919
-Tweets: tweet11
-*******************************************************************
-
-Command: my-tweets
-Screen Name: @TestyMcTest919
-Tweets: tweet10
-*******************************************************************
-
-Command: my-tweets
-Screen Name: @TestyMcTest919
-Tweets: tweet9
-*******************************************************************
-
-Command: my-tweets
-Screen Name: @TestyMcTest919
-Tweets: tweet8
-*******************************************************************
-
-Command: my-tweets
-Screen Name: @TestyMcTest919
-Tweets: tweet7
-*******************************************************************
-
-Command: my-tweets
-Screen Name: @TestyMcTest919
-Tweets: tweet6
-*******************************************************************
-
-Command: my-tweets
-Screen Name: @TestyMcTest919
-Tweets: tweet5
-*******************************************************************
-
-Command: my-tweets
-Screen Name: @TestyMcTest919
-Tweets: tweet4
-*******************************************************************
-
-Command: my-tweets
-Screen Name: @TestyMcTest919
-Tweets: tweet3
-*******************************************************************
-
-Command: my-tweets
-Screen Name: @TestyMcTest919
-Tweets: tweet2
+Spotify Song Information: undefined
 *******************************************************************

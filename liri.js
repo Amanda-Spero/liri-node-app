@@ -51,17 +51,25 @@ client.get("statuses/user_timeline", "utf8", function(error, tweet, response) {
 var Spotify = require("node-spotify-api");
 var spotifyApi = new Spotify(keys.spotify);
 var rp = require("request-promise");
-
  
 if (command === "spotify-this-song"){
 
 spotifyApi.search({type: "track", query: input, limit: 1 },function(err, data){
 
   if (err) {
-    return console.log('Error occurred: ' + err);
+    console.log('Error occurred: ' + err);
+    return;
+  }
+  else {
+    output = + (data) + "\nSong Name: " + input.toUpperCase() + "\nAlbum Name: " + data.tracks .items[0].album.name + "\n Artist Name: " + data.tracks.items[0].album.artists[0].name + "\n URL: " + data.tracks.items[0].album.external_urls.spotify + "\n\n\n"; console.log(output);
   }
 
-console.log(data); 
+//console.log(data[0].artist); 
+
+
+// request('https://api.spotify.com/v1/tracks/' + songLinks[i].split(":").pop(), function(error, response, body) {
+//     tracks.push(JSON.parse(body));
+//   });
 
  
 // .then(function(data) {
@@ -93,6 +101,7 @@ fs.readFile("random.txt", "utf8", function(error, data) {
   }
   
   var dataArr = data.split(",");
+ 
 
   spotifyApi.search({query: dataArr[1], type: "track", limit: 1 }) 
     .then(function(data) {
